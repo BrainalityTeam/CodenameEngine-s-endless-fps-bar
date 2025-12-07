@@ -18,6 +18,7 @@ import funkin.editors.SaveWarning;
 import funkin.options.PlayerSettings;
 import openfl.Assets;
 import openfl.Lib;
+import openfl.display.FPS;
 import openfl.display.Sprite;
 import openfl.text.TextFormat;
 import openfl.utils.AssetLibrary;
@@ -70,7 +71,7 @@ class Main extends Sprite
 		instance = this;
 
 		CrashHandler.init();
-
+		addChild(new FPS(10, 3, 0xFFFFFF));
 		addChild(game = new FunkinGame(gameWidth, gameHeight, MainState, Options.framerate, Options.framerate, skipSplash, startFullscreen));
 
 		#if (!mobile && !web)
